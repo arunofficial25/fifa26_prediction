@@ -1,31 +1,121 @@
 {
   "last_updated": "2026-07-06",
   "team_ratings": {
-    "Morocco":     {"Rank": 13, "Points": 1490, "Form_Pts": 2.2, "Form_GF": 1.4, "Form_GA": 0.6},
-    "France":      {"Rank": 3,  "Points": 1750, "Form_Pts": 3.0, "Form_GF": 2.8, "Form_GA": 0.4},
-    "Norway":      {"Rank": 20, "Points": 1620, "Form_Pts": 2.4, "Form_GF": 2.0, "Form_GA": 1.0},
-    "England":     {"Rank": 4,  "Points": 1700, "Form_Pts": 2.0, "Form_GF": 1.6, "Form_GA": 1.4},
-    "Spain":       {"Rank": 2,  "Points": 1800, "Form_Pts": 2.8, "Form_GF": 2.2, "Form_GA": 0.2},
-    "Portugal":    {"Rank": 5,  "Points": 1680, "Form_Pts": 2.6, "Form_GF": 2.0, "Form_GA": 0.8},
-    "Belgium":     {"Rank": 9,  "Points": 1600, "Form_Pts": 2.4, "Form_GF": 1.8, "Form_GA": 1.0},
-    "USA":         {"Rank": 17, "Points": 1500, "Form_Pts": 2.2, "Form_GF": 1.8, "Form_GA": 1.2},
-    "Argentina":   {"Rank": 1,  "Points": 1855, "Form_Pts": 2.8, "Form_GF": 2.2, "Form_GA": 0.6},
-    "Egypt":       {"Rank": 34, "Points": 1350, "Form_Pts": 1.8, "Form_GF": 1.0, "Form_GA": 1.0},
-    "Switzerland": {"Rank": 19, "Points": 1560, "Form_Pts": 2.2, "Form_GF": 1.6, "Form_GA": 1.0},
-    "Colombia":    {"Rank": 14, "Points": 1580, "Form_Pts": 2.4, "Form_GF": 1.6, "Form_GA": 0.6}
+    "Morocco": {
+      "Rank": 13,
+      "Points": 1490,
+      "Form_Pts": 2.2,
+      "Form_GF": 1.4,
+      "Form_GA": 0.6
+    },
+    "France": {
+      "Rank": 3,
+      "Points": 1750,
+      "Form_Pts": 3.0,
+      "Form_GF": 2.8,
+      "Form_GA": 0.4
+    },
+    "Norway": {
+      "Rank": 20,
+      "Points": 1620,
+      "Form_Pts": 2.4,
+      "Form_GF": 2.0,
+      "Form_GA": 1.0
+    },
+    "England": {
+      "Rank": 4,
+      "Points": 1700,
+      "Form_Pts": 2.0,
+      "Form_GF": 1.6,
+      "Form_GA": 1.4
+    },
+    "Spain": {
+      "Rank": 2,
+      "Points": 1800,
+      "Form_Pts": 2.8,
+      "Form_GF": 2.2,
+      "Form_GA": 0.2
+    },
+    "Portugal": {
+      "Rank": 5,
+      "Points": 1680,
+      "Form_Pts": 2.6,
+      "Form_GF": 2.0,
+      "Form_GA": 0.8
+    },
+    "Belgium": {
+      "Rank": 9,
+      "Points": 1600,
+      "Form_Pts": 2.4,
+      "Form_GF": 1.8,
+      "Form_GA": 1.0
+    },
+    "USA": {
+      "Rank": 17,
+      "Points": 1500,
+      "Form_Pts": 2.2,
+      "Form_GF": 1.8,
+      "Form_GA": 1.2
+    },
+    "Argentina": {
+      "Rank": 1,
+      "Points": 1855,
+      "Form_Pts": 2.8,
+      "Form_GF": 2.2,
+      "Form_GA": 0.6
+    },
+    "Egypt": {
+      "Rank": 34,
+      "Points": 1350,
+      "Form_Pts": 1.8,
+      "Form_GF": 1.0,
+      "Form_GA": 1.0
+    },
+    "Switzerland": {
+      "Rank": 19,
+      "Points": 1560,
+      "Form_Pts": 2.2,
+      "Form_GF": 1.6,
+      "Form_GA": 1.0
+    },
+    "Colombia": {
+      "Rank": 14,
+      "Points": 1580,
+      "Form_Pts": 2.4,
+      "Form_GF": 1.6,
+      "Form_GA": 0.6
+    }
   },
   "confirmed_results": {
     "R16_Belgium_USA": null,
-    "R16_Spain_Portugal": null,
+    "R16_Spain_Portugal": "Spain",
     "R16_Argentina_Egypt": null,
     "R16_Switzerland_Colombia": null
   },
   "bracket": {
-    "QF1": ["Morocco", "France"],
-    "QF2_leg_a": ["Belgium", "USA"],
-    "QF2_leg_b": ["Spain", "Portugal"],
-    "QF3": ["Norway", "England"],
-    "QF4_leg_a": ["Argentina", "Egypt"],
-    "QF4_leg_b": ["Switzerland", "Colombia"]
+    "QF1": [
+      "Morocco",
+      "France"
+    ],
+    "QF2_leg_a": [
+      "Belgium",
+      "USA"
+    ],
+    "QF2_leg_b": [
+      "Spain",
+      "Portugal"
+    ],
+    "QF3": [
+      "Norway",
+      "England"
+    ],
+    "QF4_leg_a": [
+      "Argentina",
+      "Egypt"
+    ],
+    "QF4_leg_b": [
+      "Switzerland",
+      "Colombia"
+    ]
   }
 }

@@ -19,3 +19,6 @@ outputs/*.pkl
 .DS_Store
 Thumbs.db
 .vscode/
+
+#notebooks
+notebooks/eda.ipynb
