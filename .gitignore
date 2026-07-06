@@ -1,0 +1,21 @@
+# Environment & secrets
+.env
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Large/raw data (recruiters don't need 3MB+ CSVs in the repo; document how to get them instead)
+data/raw/*.csv
+data/processed/*.csv
+
+# Model artifacts (large binary files -- regenerate via scripts instead)
+outputs/*.pkl
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
