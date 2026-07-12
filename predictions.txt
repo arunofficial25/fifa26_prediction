@@ -24,17 +24,75 @@ Our Model Predictions
    * Norway vs. England: July 12, 2026 | 02:30 AM IST | Miami Stadium, Florida
 -> Draw/England
    
-   * Winner of Argentina/Egypt vs. Winner of Switzerland/Colombia: July 12, 2026 | 06:30 AM IST | Kansas City Stadium, Missouri
+   * Argentina vs. Winner of Switzerland/Colombia: July 12, 2026 | 06:30 AM IST | Kansas City Stadium, Missouri
 -> Argentina
 
 
 3. Semi-Finals
-   * Semi-Final 1: July 14, 2026
-   * Semi-Final 2: July 15, 2026
+   * Semi-Final 1: July 15, 2026 | 12:30 AM IST | Dallos Stadium, Arlington, Texas
+   France vs Spain
+-> Spain
+
+   * Semi-Final 2: July 16, 2026 | 12:30 AM IST | Atlanta Stadium, Georgia
+   Argentina vs England
+-> Argentina
 
 4. Third-Place Playoff
-   * Bronze Medal Match: July 18, 2026
+   * Bronze Medal Match: July 19, 2026 | 02:30 AM IST | Miami Stadium, Florida
+   France vs England
+-> France
 
 5. Final
-   * World Cup Final: July 19, 2026 
--> Spain* vs England (heavily depends on Performance) 
+   * World Cup Final: July 20, 2026 | 12:30 AM IST | New York New Jersey Stadium, East Rutherford
+   Spain vs England 
+-> Draw/Spain
+
+-------------------------------------------------------------------------------------
+
+Actual Outcomes
+
+1. Round of 16
+   * Portugal vs. Spain: July 7, 2026 | 12:30 AM IST | AT&T Stadium, Arlington, Texas
+-> Spain
+
+   * USA vs. Belgium: July 7, 2026 | 05:30 AM IST | Seattle Stadium, Washington
+-> Belgium
+
+   * Argentina vs. Egypt: July 7, 2026 | 09:30 PM IST | Atlanta Stadium, Georgia
+-> Argentina
+   
+   * Switzerland vs. Colombia: July 8, 2026 | 01:30 AM IST | BC Place, Vancouver
+-> Switzerland
+
+
+2. Quarter-Finals
+   * France vs. Morocco: July 10, 2026 | 01:30 AM IST | Boston Stadium, Massachusetts
+-> France
+   
+   * Spain vs. Winner of USA/Belgium: July 11, 2026 | 00:30 AM IST | Los Angeles Stadium, California
+-> Spain
+   
+   * Norway vs. England: July 12, 2026 | 02:30 AM IST | Miami Stadium, Florida
+-> England
+   
+   * Argentina vs. Switzerland: July 12, 2026 | 06:30 AM IST | Kansas City Stadium, Missouri
+-> Argentina
+
+
+3. Semi-Finals
+   * Semi-Final 1: July 15, 2026 | 12:30 AM IST | Dallos Stadium, Arlington, Texas
+   France vs Spain
+
+   * Semi-Final 2: July 16, 2026 | 12:30 AM IST | Atlanta Stadium, Georgia
+   Argentina vs England
+
+
+4. Third-Place Playoff
+   * Bronze Medal Match: July 19, 2026 | 02:30 AM IST | Miami Stadium, Florida
+
+
+5. Final
+   * World Cup Final: July 20, 2026 | 12:30 AM IST | New York New Jersey Stadium, East Rutherford
+
+
+**7/8 knockout predictions correct so far (87%)**, with the single miss (Switzerland/Colombia) decided by penalties in a genuinely even match.

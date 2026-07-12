@@ -42,52 +42,56 @@ def advance_match(dist_a, dist_b):
     return dict(result)
 
 def get_leg_result(leg_key, result_key):
-    """
-    If the R16 leg is already decided (per confirmed_results), return a locked 100% distribution.
-    Otherwise, simulate it as an open match between the two possible teams.
-    """
+    """Locked 100% if confirmed, otherwise simulate the open match."""
     team_a, team_b = BRACKET[leg_key]
     winner = RESULTS.get(result_key)
     if winner:
         return {winner: 1.0}
     return advance_match({team_a: 1.0}, {team_b: 1.0})
 
+def get_qf_result(result_key, dist_a, dist_b):
+    """Locked 100% if the QF itself is already confirmed, otherwise simulate from the two feeder distributions."""
+    winner = RESULTS.get(result_key)
+    if winner:
+        return {winner: 1.0}
+    return advance_match(dist_a, dist_b)
+
 def show(stage, dist):
     print(f"\n=== {stage} ===")
     for team, p in sorted(dist.items(), key=lambda x: -x[1]):
         print(f"  {team:15s} {p*100:5.1f}%")
 
-# --- QF1: Morocco vs France (already a direct QF, no R16 leg needed) ---
-qf1 = advance_match({BRACKET['QF1'][0]: 1.0}, {BRACKET['QF1'][1]: 1.0})
+# --- QF1: Morocco vs France ---
+qf1_open = advance_match({BRACKET['QF1'][0]: 1.0}, {BRACKET['QF1'][1]: 1.0})
+qf1 = get_qf_result('QF1_Morocco_France', {BRACKET['QF1'][0]: 1.0}, {BRACKET['QF1'][1]: 1.0})
 show("Quarterfinal 1: Morocco vs France", qf1)
 
-# --- QF2 side ---
+# --- QF2 side: R16 legs -> QF ---
 r16_a = get_leg_result('QF2_leg_a', 'R16_Belgium_USA')
 r16_b = get_leg_result('QF2_leg_b', 'R16_Spain_Portugal')
-qf2 = advance_match(r16_a, r16_b)
-show("Quarterfinal 2: (Belgium/USA) vs (Spain/Portugal)", qf2)
+qf2 = get_qf_result('QF2_Belgium_Spain', r16_a, r16_b)
+show("Quarterfinal 2: Belgium vs Spain", qf2)
 
 # --- QF3: Norway vs England ---
-qf3 = advance_match({BRACKET['QF3'][0]: 1.0}, {BRACKET['QF3'][1]: 1.0})
+qf3 = get_qf_result('QF3_Norway_England', {BRACKET['QF3'][0]: 1.0}, {BRACKET['QF3'][1]: 1.0})
 show("Quarterfinal 3: Norway vs England", qf3)
 
 # --- QF4 side ---
 r16_c = get_leg_result('QF4_leg_a', 'R16_Argentina_Egypt')
 r16_d = get_leg_result('QF4_leg_b', 'R16_Switzerland_Colombia')
-qf4 = advance_match(r16_c, r16_d)
-show("Quarterfinal 4: (Argentina/Egypt) vs (Switzerland/Colombia)", qf4)
+qf4 = get_qf_result('QF4_Argentina_Switzerland', r16_c, r16_d)
+show("Quarterfinal 4: Argentina vs Switzerland", qf4)
 
 # --- Semifinals + Final ---
-sf1 = advance_match(qf1, qf2)
-show("Semifinal 1", sf1)
+sf1 = get_qf_result('SF1_France_Spain', qf1, qf2)
+show("Semifinal 1: France vs Spain", sf1)
 
-sf2 = advance_match(qf3, qf4)
-show("Semifinal 2", sf2)
+sf2 = get_qf_result('SF2_England_Argentina', qf3, qf4)
+show("Semifinal 2: England vs Argentina", sf2)
 
 final = advance_match(sf1, sf2)
 show("CHAMPION PROBABILITY", final)
 
-# --- Save ---
 all_stages = {'QF1': qf1, 'QF2': qf2, 'QF3': qf3, 'QF4': qf4, 'SF1': sf1, 'SF2': sf2, 'Final': final}
 rows = [{'Stage': s, 'Team': t, 'Probability': p} for s, d in all_stages.items() for t, p in d.items()]
 pd.DataFrame(rows).to_csv(os.path.join(OUTPUTS_DIR, 'bracket_simulation.csv'), index=False)
