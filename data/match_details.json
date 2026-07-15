@@ -1,112 +1,100 @@
 {
-  "QF1_Morocco_France": {"home": "Morocco", "away": "France", "homeGoals": 0, "awayGoals": 2, "penalties": null},
-  "QF2_Belgium_Spain": {"home": "Belgium", "away": "Spain", "homeGoals": 1, "awayGoals": 2, "penalties": null},
-  "QF3_Norway_England": {"home": "Norway", "away": "England", "homeGoals": 1, "awayGoals": 2, "penalties": null},
-  "QF4_Argentina_Switzerland": {"home": "Argentina", "away": "Switzerland", "homeGoals": 3, "awayGoals": 1, "penalties": null},
-  "SF1_France_Spain": {"home": "France", "away": "Spain", "homeGoals": null, "awayGoals": null, "penalties": null},
-  "SF2_England_Argentina": {"home": "England", "away": "Argentina", "homeGoals": null, "awayGoals": null, "penalties": null}
+  "R16_Morocco_France": {
+    "home": "Morocco",
+    "away": "France",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "penalties": null
+  },
+  "R16_Belgium_USA": {
+    "home": "Belgium",
+    "away": "USA",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "penalties": null
+  },
+  "R16_Spain_Portugal": {
+    "home": "Spain",
+    "away": "Portugal",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "penalties": null
+  },
+  "R16_Norway_England": {
+    "home": "Norway",
+    "away": "England",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "penalties": null
+  },
+  "R16_Argentina_Egypt": {
+    "home": "Argentina",
+    "away": "Egypt",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "penalties": null
+  },
+  "R16_Switzerland_Colombia": {
+    "home": "Switzerland",
+    "away": "Colombia",
+    "homeGoals": 4,
+    "awayGoals": 3,
+    "penalties": "4-3 pens"
+  },
+  "QF1_Morocco_France": {
+    "home": "Morocco",
+    "away": "France",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "penalties": null
+  },
+  "QF2_Belgium_Spain": {
+    "home": "Belgium",
+    "away": "Spain",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "penalties": null
+  },
+  "QF3_Norway_England": {
+    "home": "Norway",
+    "away": "England",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "penalties": null
+  },
+  "QF4_Argentina_Switzerland": {
+    "home": "Argentina",
+    "away": "Switzerland",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "penalties": null
+  },
+  "SF1_France_Spain": {
+    "home": "France",
+    "away": "Spain",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "penalties": null
+  },
+  "SF2_England_Argentina": {
+    "home": "England",
+    "away": "Argentina",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "penalties": null
+  },
+  "ThirdPlace_France_England": {
+    "home": "France",
+    "away": "England",
+    "homeGoals": null,
+    "awayGoals": null,
+    "penalties": null
+  },
+  "Final_Argentina_Spain": {
+    "home": "Argentina",
+    "away": "Spain",
+    "homeGoals": null,
+    "awayGoals": null,
+    "penalties": null
+  }
 }
-// {
-//   "R16_Morocco_France": {
-//     "home": "Morocco",
-//     "away": "France",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-//   "R16_Belgium_USA": {
-//     "home": "Belgium",
-//     "away": "USA",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-//   "R16_Spain_Portugal": {
-//     "home": "Spain",
-//     "away": "Portugal",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-//   "R16_Norway_England": {
-//     "home": "Norway",
-//     "away": "England",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-//   "R16_Argentina_Egypt": {
-//     "home": "Argentina",
-//     "away": "Egypt",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-//   "R16_Switzerland_Colombia": {
-//     "home": "Switzerland",
-//     "away": "Colombia",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-
-//   "QF1_Morocco_France": {
-//     "home": "Morocco",
-//     "away": "France",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-//   "QF2_Belgium_Spain": {
-//     "home": "Belgium",
-//     "away": "Spain",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-//   "QF3_Norway_England": {
-//     "home": "Norway",
-//     "away": "England",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-//   "QF4_Argentina_Switzerland": {
-//     "home": "Argentina",
-//     "away": "Switzerland",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-
-//   "SF1_France_Spain": {
-//     "home": "France",
-//     "away": "Spain",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-//   "SF2_England_Argentina": {
-//     "home": "England",
-//     "away": "Argentina",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-
-//   "ThirdPlace_France_England": {
-//     "home": "France",
-//     "away": "England",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   },
-
-//   "Final_Argentina_Spain": {
-//     "home": "Argentina",
-//     "away": "Spain",
-//     "homeGoals": null,
-//     "awayGoals": null,
-//     "penalties": null
-//   }
-// }

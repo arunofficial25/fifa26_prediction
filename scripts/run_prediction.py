@@ -21,6 +21,9 @@ def run_step(script_name):
 print("Fetching latest results...")
 fetch_output = run_step('07_fetch_results.py')
 
+print("Fetching match scorelines...")
+details_output = run_step('08_fetch_match_details.py')
+
 print("Running bracket simulation...")
 sim_output = run_step('06_bracket_simulator.py')
 
