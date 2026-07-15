@@ -27,12 +27,11 @@ python scripts/run_prediction.py
 ========================================
   WORLD CUP 2026 -- CHAMPION PREDICTION
 ========================================
-  Argentina        31.1%
-  Spain            25.0%
-  France           23.5%
-  England          20.3%
+  Spain            48.2%
+  Argentina        31.3%
+  England          20.5%
 
->>> Most likely champion: Argentina (31.1%)
+>>> Most likely champion: spain (48.2%)
 ========================================
 ```
 *Updated live as each round completes — see current numbers via `python scripts/run_prediction.py`.*
@@ -43,11 +42,11 @@ Every knockout prediction this model has made during the actual 2026 tournament,
 
 | Metric | Value |
 |---|---:|
-| Total Predictions | 8 |
-| Correct | 7 |
+| Total Predictions | 9 |
+| Correct | 8 |
 | Incorrect | 1 |
-| **Accuracy** | **87.5%** |
-| Last Updated | July 12, 2026 |
+| **Accuracy** | **88.8%** |
+| Last Updated | July 15, 2026 |
 
 ### Prediction History
 
@@ -61,6 +60,8 @@ Every knockout prediction this model has made during the actual 2026 tournament,
 | Spain vs Belgium | Spain | Spain | ✅ |
 | Norway vs England | England | England | ✅ |
 | Argentina vs Switzerland | Argentina | Argentina | ✅ |
+| France vs Spain | Spain | Spain | ✅ |
+
 
 > Knockout matches are scored on who advances — including extra time and penalty shootouts. The one miss (Switzerland/Colombia) is the exact case the model itself flags as hardest: a near-even matchup that came down to penalties, not a model failure to explain away.
 
@@ -72,7 +73,7 @@ Football is one of the most upset-prone sports to model — low-scoring games ha
 - **Two models, compared transparently.** Random Forest vs. draw-weighted XGBoost — documented precision/recall tradeoff rather than cherry-picking the best-looking number.
 - **Zero data leakage.** Every feature (form, head-to-head, rank) is computed strictly from matches *before* the one being predicted.
 - **Uncertainty carried through the bracket**, not collapsed at each round — a team's title odds reflect every possible path, not just the most likely one.
-- **Live-tracked, not just backtested.** The 87.5% above is real 2026 knockout results, not a holdout set.
+- **Live-tracked, not just backtested.** The 88.8% above is real 2026 knockout results, not a holdout set.
 
 ## Model Performance
 
@@ -180,7 +181,7 @@ wc2026-predictor/
 - 10 engineered features
 - 2 ML models compared
 - MySQL database
-- Live World Cup 2026 tracking (87.5% accuracy to date)
+- Live World Cup 2026 tracking (88.8% accuracy to date)
 
 ---
 
