@@ -1,0 +1,12 @@
+[
+  { "match": "Portugal vs Spain", "predicted": "Spain", "actual": "Spain", "result": "correct" },
+  { "match": "USA vs Belgium", "predicted": "Belgium", "actual": "Belgium", "result": "correct" },
+  { "match": "Argentina vs Egypt", "predicted": "Argentina", "actual": "Argentina", "result": "correct" },
+  { "match": "Switzerland vs Colombia", "predicted": "Colombia", "actual": "Switzerland", "result": "incorrect" },
+  { "match": "France vs Morocco", "predicted": "France", "actual": "France", "result": "correct" },
+  { "match": "Spain vs Belgium", "predicted": "Spain", "actual": "Spain", "result": "correct" },
+  { "match": "Norway vs England", "predicted": "England", "actual": "England", "result": "correct" },
+  { "match": "Argentina vs Switzerland", "predicted": "Argentina", "actual": "Argentina", "result": "correct" },
+  { "match": "France vs Spain (SF)", "predicted": "Spain", "actual": "Spain", "result": "correct" },
+  { "match": "Argentina vs England (SF)", "predicted": "Argentina", "actual": "Argentina", "result": "correct" }
+]
