@@ -25,8 +25,8 @@
     "QF4_Argentina_Switzerland": "Argentina",
     "SF1_France_Spain": "Spain",
     "SF2_England_Argentina": "Argentina",
-    "ThirdPlace_France_England": null,
-    "Final_Argentina_Spain": null
+    "ThirdPlace_France_England": "England",
+    "Final_Argentina_Spain": "Spain"
   },
   "bracket": {
     "QF1": ["Morocco", "France"],

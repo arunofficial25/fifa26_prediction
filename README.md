@@ -25,12 +25,13 @@ python scripts/run_prediction.py
 
 ```
 ========================================
-  WORLD CUP 2026 -- CHAMPION PREDICTION
+  WORLD CUP 2026 -- CHAMPION
 ========================================
-  Argentina        53.9%
-  Spain            46.1%
+1.  Spain            100%
+2.  Argentina
+3.  England
 
->>> Most likely champion: Argentina (53.9%)
+>>>>> champion: Argentina (100%)
 
 ========================================
 ```
@@ -42,10 +43,10 @@ Every knockout prediction this model has made during the actual 2026 tournament,
 
 | Metric | Value |
 |---|---:|
-| Total Predictions | 11 |
-| Correct | 9 |
+| Total Predictions | 12 |
+| Correct | 10 |
 | Incorrect | 2 |
-| **Accuracy** | **81%** |
+| **Accuracy** | **83%** |
 | Last Updated | July 19, 2026 |
 
 ### Prediction History
@@ -63,6 +64,7 @@ Every knockout prediction this model has made during the actual 2026 tournament,
 | France vs Spain | Spain | Spain | ✅ |
 | Argentina vs England | Argentina | Argentina | ✅ |
 | France vs England | France | England | ❌ |
+| Argentina vs Spain | Spain | Spain | ✅ |
 
 > Knockout matches are scored on who advances — including extra time and penalty shootouts. The one miss (Switzerland/Colombia) is the exact case the model itself flags as hardest: a near-even matchup that came down to penalties, not a model failure to explain away.
 
@@ -166,7 +168,8 @@ wc2026-predictor/
 
 ## Screenshots
 
-*[Coming soon — dashboard in progress]*
+Check out
+(https://github.com/arunofficial25/fifa26_dashboard)
 
 ## Future Work
 
@@ -182,7 +185,7 @@ wc2026-predictor/
 - 10 engineered features
 - 2 ML models compared
 - MySQL database
-- Live World Cup 2026 tracking (81% accuracy to date)
+- Live World Cup 2026 tracking (83% accuracy to date)
 
 ---
 
