@@ -86,8 +86,8 @@
   "ThirdPlace_France_England": {
     "home": "France",
     "away": "England",
-    "homeGoals": null,
-    "awayGoals": null,
+    "homeGoals": 4,
+    "awayGoals": 6,
     "penalties": null
   },
   "Final_Argentina_Spain": {

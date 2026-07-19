@@ -22,3 +22,6 @@ Thumbs.db
 
 #notebooks
 notebooks/eda.ipynb
+
+# FIFA 2026 dashboard (separate repo, lives alongside this one)
+FIFA 2026 dashboard/
