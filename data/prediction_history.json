@@ -8,7 +8,7 @@
   { "match": "Norway vs England", "predicted": "England", "actual": "England", "result": "correct" },
   { "match": "Argentina vs Switzerland", "predicted": "Argentina", "actual": "Argentina", "result": "correct" },
   { "match": "France vs Spain (SF)", "predicted": "Spain", "actual": "Spain", "result": "correct" },
-  { "match": "Argentina vs England (SF)", "predicted": "Argentina", "actual": "Argentina", "result": "correct" }
+  { "match": "Argentina vs England (SF)", "predicted": "Argentina", "actual": "Argentina", "result": "correct" },
   { "match": "France vs England (Third Place)", "predicted": "France", "actual": "England", "result": "incorrect" },
   { "match": "Argentina vs Spain (Final)", "predicted": "Spain", "actual": "Spain", "result": "correct" }
 ]

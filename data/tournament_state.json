@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-16",
+  "last_updated": "2026-07-20",
   "team_ratings": {
     "Morocco":     {"Rank": 13, "Points": 1490, "Form_Pts": 2.2, "Form_GF": 1.4, "Form_GA": 0.6},
     "France":      {"Rank": 3,  "Points": 1750, "Form_Pts": 3.0, "Form_GF": 2.8, "Form_GA": 0.4},
@@ -25,7 +25,6 @@
     "QF4_Argentina_Switzerland": "Argentina",
     "SF1_France_Spain": "Spain",
     "SF2_England_Argentina": "Argentina",
-    "Final_Argentina_Spain": "Spain",
     "ThirdPlace_France_England": "England",
     "Final_Argentina_Spain": "Spain"
   },
@@ -38,6 +37,3 @@
     "QF4_leg_b": ["Switzerland", "Colombia"]
   }
 }
-
-
-
