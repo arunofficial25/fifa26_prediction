@@ -1,14 +1,24 @@
 # 🏆 WC2026 Predictor
 
-A machine learning system that predicts FIFA World Cup 2026 match outcomes and simulates the entire tournament bracket to a champion probability — trained on 47,000+ international matches (1996–2024) and updated live as the real 2026 tournament unfolds.
+A machine learning system that predicts FIFA World Cup 2026 match outcomes and simulates the entire tournament bracket to a champion probability — trained on 47,000+ international matches (1996–2024) and updated live as the real 2026 tournament unfolded.
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.7-orange)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Live Accuracy](https://img.shields.io/badge/Live%20Accuracy-87.5%25-success)
+![Live Accuracy](https://img.shields.io/badge/Live%20Accuracy-83%25-success)
 
-<!-- **[Live Prediction Tracker](#live-prediction-performance) · [Model Results](#model-performance) · [Setup](#setup)** -->
+---
+
+## 🇪🇸 Champions: Spain
+
+> 🎉🏆 **Spain are the 2026 FIFA World Cup Champions** 🏆🎉
+>
+> Beat Argentina 1–0 after extra time in the final at MetLife Stadium — Spain's second World Cup title, first since 2010. The model's champion pick tracked Spain through the entire knockout stage, correctly calling every one of their matches from Round of 16 to the Final.
+>
+> 🥇 Spain · 🥈 Argentina · 🥉 England
+>
+> 🇪🇸 💐 ⚽ 🏆 🎊
 
 ---
 
@@ -16,8 +26,8 @@ A machine learning system that predicts FIFA World Cup 2026 match outcomes and s
 
 - Predicts Win / Draw / Loss probabilities for any international matchup
 - Simulates the full knockout bracket — quarterfinals through the final — carrying uncertainty through every round instead of just picking one path
-- Self-updates as real 2026 results come in (live API, with a config-file fallback)
-- One command to answer "who wins the World Cup?"
+- Self-updated as real 2026 results came in (live API, with a config-file fallback)
+- One command answered "who wins the World Cup?" — and got it right
 
 ```bash
 python scripts/run_prediction.py
@@ -27,27 +37,37 @@ python scripts/run_prediction.py
 ========================================
   WORLD CUP 2026 -- CHAMPION
 ========================================
-1.  Spain            100%
-2.  Argentina
-3.  England
+1.  Spain             🥇
+2.  Argentina         🥈
+3.  England           🥉
 
->>>>> champion: Argentina (100%)
+>>>>> champion: Spain
+
 
 ========================================
+Argentina vs Spain (Final)
+========================================
+Argentina        30.78%
+Draw             37.97%
+Spain            31.25%
+----------------------------------------
+Most likely: Draw (37.97%)
+
+Match went to extra time, Spain won 1-0
+========================================
 ```
-*Updated live as each round completes — see current numbers via `python scripts/run_prediction.py`.*
 
 ## Live Prediction Performance
 
-Every knockout prediction this model has made during the actual 2026 tournament, tracked against real results.
+Every knockout prediction this model made during the actual 2026 tournament, tracked against real results — start to finish.
 
 | Metric | Value |
 |---|---:|
 | Total Predictions | 12 |
 | Correct | 10 |
 | Incorrect | 2 |
-| **Accuracy** | **83%** |
-| Last Updated | July 19, 2026 |
+| **Final Accuracy** | **83%** |
+| Tournament Complete | July 20, 2026 |
 
 ### Prediction History
 
@@ -61,12 +81,12 @@ Every knockout prediction this model has made during the actual 2026 tournament,
 | Spain vs Belgium | Spain | Spain | ✅ |
 | Norway vs England | England | England | ✅ |
 | Argentina vs Switzerland | Argentina | Argentina | ✅ |
-| France vs Spain | Spain | Spain | ✅ |
-| Argentina vs England | Argentina | Argentina | ✅ |
-| France vs England | France | England | ❌ |
-| Argentina vs Spain | Spain | Spain | ✅ |
+| France vs Spain (SF) | Spain | Spain | ✅ |
+| Argentina vs England (SF) | Argentina | Argentina | ✅ |
+| France vs England (3rd Place) | France | England (6-4) | ❌ |
+| **Argentina vs Spain (Final)** | **Spain** | **Spain (1-0, AET)** | ✅ |
 
-> Knockout matches are scored on who advances — including extra time and penalty shootouts. The one miss (Switzerland/Colombia) is the exact case the model itself flags as hardest: a near-even matchup that came down to penalties, not a model failure to explain away.
+> Knockout matches are scored on who advances — including extra time and penalty shootouts. Both misses were the model's own flagged weak spots: Switzerland/Colombia came down to penalties in a near-even matchup, and the third-place playoff (a low-stakes consolation game with rotated lineups) is inherently the least predictable fixture in any tournament — team ratings assume full-strength sides.
 
 ## Why this isn't just "another ML project"
 
@@ -75,8 +95,8 @@ Football is one of the most upset-prone sports to model — low-scoring games ha
 - **Calibration over vanity accuracy.** Evaluated with log loss, not just accuracy, because a well-calibrated 55% beats an overconfident 70% that's secretly overfit.
 - **Two models, compared transparently.** Random Forest vs. draw-weighted XGBoost — documented precision/recall tradeoff rather than cherry-picking the best-looking number.
 - **Zero data leakage.** Every feature (form, head-to-head, rank) is computed strictly from matches *before* the one being predicted.
-- **Uncertainty carried through the bracket**, not collapsed at each round — a team's title odds reflect every possible path, not just the most likely one.
-- **Live-tracked, not just backtested.** The 88.8% above is real 2026 knockout results, not a holdout set.
+- **Uncertainty carried through the bracket**, not collapsed at each round — a team's title odds reflected every possible path, not just the most likely one.
+- **Live-tracked, not just backtested.** The 83% above is real 2026 knockout results, start to finish, not a holdout set picked after the fact.
 
 ## Model Performance
 
@@ -115,8 +135,8 @@ football-data.org API (live results, config-file fallback)
 
 ```bash
 # 1. Clone and install
-git clone https://github.com/arunofficial25/wc2026-predictor.git
-cd wc2026-predictor
+git clone https://github.com/arunofficial25/fifa26_prediction.git
+cd fifa26_prediction
 python -m venv venv
 venv\Scripts\activate          # Windows
 pip install -r requirements.txt
@@ -125,7 +145,7 @@ pip install -r requirements.txt
 cp .env.example .env           # then fill in your DB credentials + API key
 
 # 3. Set up the database (MySQL Workbench)
-#    Run sql/schema.sql to create WC2026Predictor and its tables
+#    Run sql/database.sql to create WC2026Predictor and its tables
 
 # 4. Build the pipeline
 python scripts/01_collect_data.py
@@ -135,7 +155,7 @@ python scripts/04_train_model.py
 
 # 5. Get predictions
 python scripts/run_prediction.py                  # full bracket → champion
-python scripts/check_match.py France England      # any single matchup
+python scripts/check_match.py Spain Argentina     # any single matchup
 ```
 
 > Raw datasets aren't included in this repo (see `.gitignore`) — `01_collect_data.py` documents the exact sources: [International football results 1872–2024](https://github.com/JamshedAli18/International-football-results-from-1872-to-2024) and [FIFA World Ranking history](https://github.com/Dato-Futbol/fifa-ranking).
@@ -143,12 +163,14 @@ python scripts/check_match.py France England      # any single matchup
 ## Project Structure
 
 ```
-wc2026-predictor/
+fifa26_prediction/
 ├── data/
 │   ├── raw/                    # historical results + rankings (gitignored)
 │   ├── processed/              # cleaned, feature-engineered datasets
-│   └── tournament_state.json   # live tournament state (ratings, bracket, results)
-├── sql/                        # database schema
+│   ├── tournament_state.json   # tournament state (ratings, bracket, confirmed results)
+│   ├── match_details.json      # scorelines for every confirmed match
+│   └── prediction_history.json # full record of predicted vs. actual outcomes
+├── sql/                         # database schema
 ├── scripts/
 │   ├── 01_collect_data.py
 │   ├── 02_load_to_sql.py
@@ -157,6 +179,7 @@ wc2026-predictor/
 │   ├── 05_predict_live.py
 │   ├── 06_bracket_simulator.py
 │   ├── 07_fetch_results.py     # API-first, config-file fallback
+│   ├── 08_fetch_match_details.py
 │   ├── run_prediction.py       # one-command full pipeline
 │   └── check_match.py          # interactive single-match lookup
 ├── notebooks/
@@ -166,16 +189,14 @@ wc2026-predictor/
 └── README.md
 ```
 
-## Screenshots
+## Dashboard
 
-Check out
-(https://github.com/arunofficial25/fifa26_dashboard)
+Live-updating bracket visualization, built in Next.js: [fifa26_dashboard](https://github.com/arunofficial25/fifa26_dashboard)
 
 ## Future Work
 
 - Poisson goal-simulation model as a second, independent prediction method
-- Tableau/Power BI dashboard for the live bracket
-- Expand automation to the full round-of-16 field, not just the confirmed knockout path
+- Extend the interactive match checker to the full 368-team historical database, not just the 12 teams tracked through the knockout stage
 
 ## Repository Statistics
 
@@ -185,10 +206,10 @@ Check out
 - 10 engineered features
 - 2 ML models compared
 - MySQL database
-- Live World Cup 2026 tracking (83% accuracy to date)
+- **Final live 2026 tournament tracking: 83% accuracy (10/12)**
 
 ---
 
 Built by Arun
 
-[Linkedin](https://linkedin.com/in/arunofficial25) · [Website](https://arunofficial25.vercel.app) · [GitHub](https://github.com/arunofficial25)
+[LinkedIn](https://linkedin.com/in/arunofficial25) · [Website](https://arunofficial25.vercel.app) · [GitHub](https://github.com/arunofficial25)

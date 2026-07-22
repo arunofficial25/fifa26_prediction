@@ -89,8 +89,8 @@ show("Semifinal 1: France vs Spain", sf1)
 sf2 = get_qf_result('SF2_England_Argentina', qf3, qf4)
 show("Semifinal 2: England vs Argentina", sf2)
 
-final = advance_match(sf1, sf2)
-show("CHAMPION PROBABILITY", final)
+final = get_qf_result('Final_Argentina_Spain', sf1, sf2)
+show("Final: Argentina vs Spain", final)
 
 all_stages = {'QF1': qf1, 'QF2': qf2, 'QF3': qf3, 'QF4': qf4, 'SF1': sf1, 'SF2': sf2, 'Final': final}
 rows = [{'Stage': s, 'Team': t, 'Probability': p} for s, d in all_stages.items() for t, p in d.items()]

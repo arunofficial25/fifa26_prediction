@@ -25,6 +25,7 @@
     "QF4_Argentina_Switzerland": "Argentina",
     "SF1_France_Spain": "Spain",
     "SF2_England_Argentina": "Argentina",
+    "Final_Argentina_Spain": "Spain",
     "ThirdPlace_France_England": "England",
     "Final_Argentina_Spain": "Spain"
   },
@@ -37,5 +38,6 @@
     "QF4_leg_b": ["Switzerland", "Colombia"]
   }
 }
+
 
 

@@ -8,7 +8,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUTS_DIR = os.path.join(BASE_DIR, "outputs")
 STATE_PATH = os.path.join(BASE_DIR, "data", "tournament_state.json")
 
-# Load model
 model = joblib.load(os.path.join(OUTPUTS_DIR, "model_rf.pkl"))
 
 FEATURES = [
@@ -24,51 +23,14 @@ FEATURES = [
     "IsNeutralVenue",
 ]
 
-# Load tournament state
 with open(STATE_PATH, "r") as f:
     STATE = json.load(f)
 
 TEAM_RATINGS = STATE["team_ratings"]
 
-
-def get_active_teams():
-    """Determine remaining teams by walking confirmed_results and eliminating losers."""
-    bracket = STATE["bracket"]
-    results = STATE["confirmed_results"]
-    eliminated = set()
-
-    def eliminate_loser(pair, result_key):
-        winner = results.get(result_key)
-        if winner and None not in pair:
-            loser = pair[0] if winner == pair[1] else pair[1]
-            eliminated.add(loser)
-        return winner
-
-    # R16 legs -> which teams reach QF2/QF4
-    r16_a = eliminate_loser(bracket["QF2_leg_a"], "R16_Belgium_USA")
-    r16_b = eliminate_loser(bracket["QF2_leg_b"], "R16_Spain_Portugal")
-    r16_c = eliminate_loser(bracket["QF4_leg_a"], "R16_Argentina_Egypt")
-    r16_d = eliminate_loser(bracket["QF4_leg_b"], "R16_Switzerland_Colombia")
-
-    # Quarterfinals
-    eliminate_loser(bracket["QF1"], "QF1_Morocco_France")
-    qf2_winner = eliminate_loser([r16_a, r16_b], "QF2_Belgium_Spain") if r16_a and r16_b else None
-    eliminate_loser(bracket["QF3"], "QF3_Norway_England")
-    qf4_winner = eliminate_loser([r16_c, r16_d], "QF4_Argentina_Switzerland") if r16_c and r16_d else None
-
-    # Semifinals
-    qf1_winner = results.get("QF1_Morocco_France")
-    qf3_winner = results.get("QF3_Norway_England")
-    if qf1_winner and qf2_winner:
-        eliminate_loser([qf1_winner, qf2_winner], "SF1_France_Spain")
-    if qf3_winner and qf4_winner:
-        eliminate_loser([qf3_winner, qf4_winner], "SF2_England_Argentina")
-
-    active = sorted(set(TEAM_RATINGS.keys()) - eliminated)
-    return active
-
-
-ACTIVE_TEAMS = get_active_teams()
+# Tournament is complete -- no more "active"/"eliminated" distinction needed.
+# Every team stored in tournament_state.json can be checked against any other.
+ALL_TEAMS = sorted(TEAM_RATINGS.keys())
 
 
 def predict_match(teamA, teamB):
@@ -92,10 +54,10 @@ def predict_match(teamA, teamB):
 
 
 def find_team(name):
-    """Case-insensitive lookup among remaining teams."""
+    """Case-insensitive lookup among all stored teams."""
     name = name.strip().lower()
 
-    for team in ACTIVE_TEAMS:
+    for team in ALL_TEAMS:
         if team.lower() == name:
             return team
 
@@ -110,8 +72,8 @@ def run_check(team_a_input, team_b_input):
     if not team_a or not team_b:
 
         print("\n❌ Invalid team name.")
-        print("Remaining teams:")
-        print(", ".join(ACTIVE_TEAMS))
+        print("All Teams:")
+        print(", ".join(ALL_TEAMS))
         return
 
     home, draw, away = predict_match(team_a, team_b)
@@ -142,8 +104,8 @@ if __name__ == "__main__":
         print("\n🏆 FIFA World Cup 2026 Match Predictor")
         print("-" * 40)
         print("Type 'exit' anytime to quit.\n")
-        print("Remaining teams:")
-        print(", ".join(ACTIVE_TEAMS))
+        print("All Teams:")
+        print(", ".join(ALL_TEAMS))
 
         while True:
 
